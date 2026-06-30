@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class TeacherManager : MonoBehaviour
 {
     [Header("UI Elementleri")]
-    public Transform contentPanel;      // ScrollView içindeki Content nesnesi
-    public GameObject wordPrefab;       // Az önce oluþturduðumuz WordItem_Prefab
+    public Transform contentPanel;     
+    public GameObject wordPrefab;       
 
     // Sistemdeki örnek kelime havuzu
     private List<string> wordPool = new List<string> { "Araba", "Tren", "Kitap", "Elma", "Güneþ", "Televizyon", "Kaþýk", "Ördek", "Balýk", "Uçak" };
@@ -20,22 +20,20 @@ public class TeacherManager : MonoBehaviour
         GenerateWordList();
     }
 
-    // Kelimeleri dinamik olarak ekrana basan fonksiyon
-    // Kelimeleri dinamik olarak ekrana basan fonksiyon
+   
     void GenerateWordList()
     {
         foreach (string word in wordPool)
         {
-            // Prefab'ý Content panelinin altýnda oluþturuyoruz
+            
             GameObject newWordItem = Instantiate(wordPrefab, contentPanel);
             newWordItem.transform.localScale = Vector3.one;
 
-            // Prefab üzerindeki script'e ulaþýyoruz
+           
             WordItemScript itemScript = newWordItem.GetComponent<WordItemScript>();
 
             if (itemScript != null && itemScript.wordTextObject != null)
             {
-                // TextMeshPro bileþenlerini kontrol edip kelimeyi yazdýrýyoruz
                 TextMeshProUGUI tmpText = itemScript.wordTextObject.GetComponent<TextMeshProUGUI>();
                 if (tmpText == null) tmpText = itemScript.wordTextObject.GetComponentInChildren<TextMeshProUGUI>();
 
@@ -54,7 +52,7 @@ public class TeacherManager : MonoBehaviour
             Toggle toggle = newWordItem.GetComponent<Toggle>();
             if (toggle != null)
             {
-                // ÖNCE durumu kapatýyoruz (böylece fonksiyon kendi kendine tetiklenmiyor)
+             
                 toggle.isOn = false;
 
                 // SONRA hocanýn týklamalarýný dinlemeye baþlýyoruz
@@ -87,7 +85,6 @@ public class TeacherManager : MonoBehaviour
             return;
         }
 
-        // Seçilenleri aralarýna virgül koyarak yerel hafýzaya kaydet
         string combinedWords = string.Join(",", selectedWords);
         PlayerPrefs.SetString("CurrentAssignment", combinedWords);
         PlayerPrefs.Save();

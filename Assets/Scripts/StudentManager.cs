@@ -9,18 +9,18 @@ using TMPro;
 public class StudentManager : MonoBehaviour
 {
     [Header("UI Elementleri")]
-    public TextMeshProUGUI txtCurrentWord; // Ekrandaki büyük kelime yazısı
-    public Button btnRecord;              // Kaydet / Durdur butonu
-    public Button btnNextWord;            // Sonraki kelimeye geçiş butonu
-    public Button btnListen;              // Dinle butonu
+    public TextMeshProUGUI txtCurrentWord; 
+    public Button btnRecord;              
+    public Button btnNextWord;           
+    public Button btnListen;              
 
     [Header("Ses Ayarları")]
     private AudioClip recordingClip;
     private bool isRecording = false;
     private int sampleRate = 44100;
-    private AudioSource audioSource;       // Sesleri çalacak bileşen
+    private AudioSource audioSource;      
 
-    // Öğretmenden gelen kelimelerin listesi
+
     private List<string> assignedWords = new List<string>();
     private int currentWordIndex = 0;
 
@@ -31,7 +31,6 @@ public class StudentManager : MonoBehaviour
         LoadAssignment();
         UpdateUI();
 
-        // Butonların tıklama olaylarını bağlıyoruz
         btnRecord.onClick.AddListener(OnRecordButtonClicked);
         btnNextWord.onClick.AddListener(NextWord);
         btnListen.onClick.AddListener(PlayCurrentWordSound);
@@ -69,17 +68,15 @@ public class StudentManager : MonoBehaviour
         }
     }
 
-    // **********************************************************
-    // ARADIĞIMIZ PUBLIC FONKSİYON TAM OLARAK BURASI:
-    // **********************************************************
+   
     public void PlayCurrentWordSound()
     {
         if (assignedWords.Count == 0 || currentWordIndex >= assignedWords.Count) return;
 
-        // Kelimenin adını alıyoruz (Örn: "araba") ve küçük harfe çeviriyoruz
+      
         string currentWord = assignedWords[currentWordIndex].ToLower().Trim();
 
-        // Resources klasöründen kelimeyle aynı isimdeki ses dosyasını yüklüyoruz
+       
         AudioClip wordSound = Resources.Load<AudioClip>(currentWord);
 
         if (wordSound != null)
