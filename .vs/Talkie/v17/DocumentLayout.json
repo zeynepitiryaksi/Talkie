@@ -1,21 +1,25 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Zeynep\\Talkie\\",
+  "WorkspaceRootPath": "C:\\Users\\Zeynep\\Desktop\\Talkie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|c:\\users\\zeynep\\talkie\\assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|c:\\users\\zeynep\\desktop\\talkie\\assets\\scripts\\studentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\studentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Talkie\\assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Talkie\\assets\\textmesh pro\\fonts\\liberationsans - ofl.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\textmesh pro\\fonts\\liberationsans - ofl.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\textmesh pro\\fonts\\liberationsans - ofl.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
@@ -26,15 +30,15 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LoginManager.cs",
-              "DocumentMoniker": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\LoginManager.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\LoginManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\LoginManager.cs",
-              "ToolTip": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\LoginManager.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\LoginManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\LoginManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -44,36 +48,48 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "StudentManager.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\StudentManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\StudentManager.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\StudentManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\StudentManager.cs",
+              "ViewState": "AgIAAJwAAAAAAAAAAAAYwMoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-30T10:30:21.92Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "WordItemScript.cs",
-              "DocumentMoniker": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WordItemScript.cs",
-              "ToolTip": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
               "RelativeToolTip": "Assets\\Scripts\\WordItemScript.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T21:04:47.979Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-29T21:04:47.979Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TeacherManager.cs",
-              "DocumentMoniker": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TeacherManager.cs",
-              "ToolTip": "C:\\Users\\Zeynep\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\TeacherManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwF0AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T20:18:08.715Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "LiberationSans - OFL.txt",
-              "DocumentMoniker": "C:\\Users\\Zeynep\\Talkie\\Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
               "RelativeDocumentMoniker": "Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
-              "ToolTip": "C:\\Users\\Zeynep\\Talkie\\Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
               "RelativeToolTip": "Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAAA8AAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",

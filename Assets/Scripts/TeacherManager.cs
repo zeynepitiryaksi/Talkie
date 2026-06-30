@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class TeacherManager : MonoBehaviour
 {
     [Header("UI Elementleri")]
@@ -21,39 +21,48 @@ public class TeacherManager : MonoBehaviour
     }
 
     // Kelimeleri dinamik olarak ekrana basan fonksiyon
+    // Kelimeleri dinamik olarak ekrana basan fonksiyon
     void GenerateWordList()
     {
         foreach (string word in wordPool)
         {
+            // Prefab'ý Content panelinin altýnda oluþturuyoruz
             GameObject newWordItem = Instantiate(wordPrefab, contentPanel);
             newWordItem.transform.localScale = Vector3.one;
 
+            // Prefab üzerindeki script'e ulaþýyoruz
             WordItemScript itemScript = newWordItem.GetComponent<WordItemScript>();
+
             if (itemScript != null && itemScript.wordTextObject != null)
             {
-                // Deðiþen wordTextObject adýný burada kullanýyoruz
-                // wordTextObject'in içindeki her türlü yazý bileþenini tek tek deniyoruz:
+                // TextMeshPro bileþenlerini kontrol edip kelimeyi yazdýrýyoruz
                 TextMeshProUGUI tmpText = itemScript.wordTextObject.GetComponent<TextMeshProUGUI>();
+                if (tmpText == null) tmpText = itemScript.wordTextObject.GetComponentInChildren<TextMeshProUGUI>();
+
                 if (tmpText != null)
                 {
                     tmpText.text = word;
                 }
                 else
                 {
-                    // Eðer TextMeshPro alt nesnedeyse diye garantiye alýyoruz
-                    tmpText = itemScript.wordTextObject.GetComponentInChildren<TextMeshProUGUI>();
-                    if (tmpText != null)
-                    {
-                        tmpText.text = word;
-                    }
-                    else
-                    {
-                        // Eski nesne ise normal Text olarak yazdýrýyoruz
-                        Text normalText = itemScript.wordTextObject.GetComponent<Text>();
-                        if (normalText != null) normalText.text = word;
-                    }
+                    Text normalText = itemScript.wordTextObject.GetComponent<Text>();
+                    if (normalText != null) normalText.text = word;
                 }
             }
+
+         
+            Toggle toggle = newWordItem.GetComponent<Toggle>();
+            if (toggle != null)
+            {
+                // ÖNCE durumu kapatýyoruz (böylece fonksiyon kendi kendine tetiklenmiyor)
+                toggle.isOn = false;
+
+                // SONRA hocanýn týklamalarýný dinlemeye baþlýyoruz
+                toggle.onValueChanged.AddListener((bool isChecked) => {
+                    ToggleWordSelection(word, isChecked);
+                });
+            }
+            
         }
     }
     public void ToggleWordSelection(string word, bool isSelected)
@@ -82,7 +91,7 @@ public class TeacherManager : MonoBehaviour
         string combinedWords = string.Join(",", selectedWords);
         PlayerPrefs.SetString("CurrentAssignment", combinedWords);
         PlayerPrefs.Save();
-
+        SceneManager.LoadScene("Scene_Student"); 
         Debug.Log("Ödev baþarýyla gönderildi: " + combinedWords);
     }
 }
