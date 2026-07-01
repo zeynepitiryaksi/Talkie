@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Zeynep\\Desktop\\Talkie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|c:\\users\\zeynep\\desktop\\talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|c:\\users\\zeynep\\desktop\\talkie\\assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\studentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -43,8 +43,7 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T18:50:04.634Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -56,12 +55,11 @@
               "RelativeToolTip": "Assets\\Scripts\\StudentManager.cs",
               "ViewState": "AgIAAGYAAAAAAAAAAAAowEsAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:30:21.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T10:30:21.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "WordItemScript.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WordItemScript.cs",
@@ -74,13 +72,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TeacherManager.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TeacherManager.cs",
               "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\TeacherManager.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwFYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-29T20:18:08.715Z",
               "EditorCaption": ""
