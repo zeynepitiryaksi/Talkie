@@ -33,7 +33,7 @@ public class StudentManager : MonoBehaviour
 
         btnRecord.onClick.AddListener(OnRecordButtonClicked);
         btnNextWord.onClick.AddListener(NextWord);
-        btnListen.onClick.AddListener(PlayCurrentWordSound);
+       // btnListen.onClick.AddListener(PlayCurrentWordSound);
     }
 
     void LoadAssignment()

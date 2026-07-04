@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
-using System.Collections.Generic; // Listeleri kullanabilmek için ekledik
+using System.Collections.Generic;
+using UnityEngine.UI; // Buton renkleri için ekledik
 
 public class TerapistHesapYonetimi : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class TerapistHesapYonetimi : MonoBehaviour
     public TMP_InputField kayitEpostaInput;
     public TMP_InputField kayitSifreInput;
     public TMP_InputField kayitSifreTekrarInput;
-
+    private List<string> secilenKelimeler = new List<string>();
     [Header("Giriş Alanları")]
     public TMP_InputField girisEpostaInput;
     public TMP_InputField girisSifreInput;
@@ -17,18 +18,25 @@ public class TerapistHesapYonetimi : MonoBehaviour
     [Header("Paneller")]
     public GameObject terapistGirisKayitPaneli;
     public GameObject terapistYonetimPaneli;
-    public GameObject kayitOlAltPaneli;   // Kayıt başarılı olunca kapatmak için ekledik
-    public GameObject girisYapAltPaneli;  // Kayıt başarılı olunca açmak için ekledik
+    public GameObject kayitOlAltPaneli;
+    public GameObject girisYapAltPaneli;
     public GameObject anaButonlarGrubu;
-    [Header("Kelime Listesi Ayarları")]
-    public GameObject kelimePrefab;   // Proje panelindeki şablonumuz (Prefab)
-    public Transform kelimeContainer; // Hiyerarşideki "Content" nesnemiz
 
-    // Uygulama açıldığında listelenecek örnek kelimelerimiz
-    private List<string> kelimeListesi = new List<string>()
-    {
-        "Elma", "Araba", "Balık", "Güneş", "Kitap", "Kalem", "Kedi", "Köpek"
-    };
+    [Header("Kelime Listesi Ayarları")]
+    public GameObject kelimePrefab;
+    public Transform kelimeContainer;
+
+
+    [Header("Arama ve Bilgi Alanları")]
+    public TMP_InputField aramaInput;
+    public TextMeshProUGUI durumMesajiText;
+
+    [Header("Seçim Renkleri")]
+    public Color seciliRenk = Color.green;
+    public Color normalRenk = Color.white;
+
+    private List<string> kelimeListesi = new List<string>();
+    private GameObject sonSecilenButon = null;
 
     public void TerapistKayitOl()
     {
@@ -37,42 +45,35 @@ public class TerapistHesapYonetimi : MonoBehaviour
         string sifre = kayitSifreInput.text;
         string sifreTekrar = kayitSifreTekrarInput.text;
 
-        // Eksik alan kontrolü
         if (string.IsNullOrEmpty(kAdi) || string.IsNullOrEmpty(eposta) || string.IsNullOrEmpty(sifre) || string.IsNullOrEmpty(sifreTekrar))
         {
             Debug.LogError("Lütfen tüm alanları doldurun!");
             return;
         }
 
-        // Şifre uyuşmazlık kontrolü
         if (sifre != sifreTekrar)
         {
             Debug.LogError("Girdiğiniz şifreler birbiriyle uyuşmuyor!");
             return;
         }
 
-        // E-posta format kontrolü
         if (!eposta.Contains("@"))
         {
             Debug.LogError("Lütfen geçerli bir e-posta adresi girin!");
             return;
         }
 
-        // Bilgileri cihaz hafızasına kaydediyoruz
         PlayerPrefs.SetString("TerapistSifre_" + eposta, sifre);
         PlayerPrefs.SetString("TerapistKullanici_" + eposta, kAdi);
         PlayerPrefs.Save();
 
         Debug.Log("Kayıt Başarılı! Artık Giriş Yap ekranından e-postanızla giriş yapabilirsiniz.");
 
-        // Kutuların içini temizliyoruz
         kayitKullaniciAdiInput.text = "";
         kayitEpostaInput.text = "";
         kayitSifreInput.text = "";
         kayitSifreTekrarInput.text = "";
 
-        // --- OTOMATİK PANEL GEÇİŞİ ---
-        // Kayıt bitince kayıt panelini kapatıp, giriş panelini otomatik açıyoruz
         if (kayitOlAltPaneli != null) kayitOlAltPaneli.SetActive(false);
         if (girisYapAltPaneli != null) girisYapAltPaneli.SetActive(true);
     }
@@ -88,24 +89,24 @@ public class TerapistHesapYonetimi : MonoBehaviour
             return;
         }
 
-        // Kayıtlı e-posta kontrolü
         if (PlayerPrefs.HasKey("TerapistSifre_" + eposta))
         {
             string kayitliSifre = PlayerPrefs.GetString("TerapistSifre_" + eposta);
 
-            // Şifre kontrolü
             if (sifre == kayitliSifre)
             {
                 string kullaniciAdi = PlayerPrefs.GetString("TerapistKullanici_" + eposta);
                 Debug.Log("Giriş Başarılı! Hoş geldiniz Terapist: " + kullaniciAdi);
 
-                // Giriş panellerini komple kapatıp, Kelime Yönetim Panelini açıyoruz
                 if (terapistGirisKayitPaneli != null) terapistGirisKayitPaneli.SetActive(false);
 
                 if (terapistYonetimPaneli != null)
                 {
                     terapistYonetimPaneli.SetActive(true);
-                    KelimeListesiniDoldur(); // Kelimeleri ekrana basan fonksiyonu çağırıyoruz
+
+
+                    DosyadanKelimeleriYukle();
+                    KelimeListesiniFiltreleVeDoldur("");
                 }
             }
             else
@@ -119,27 +120,157 @@ public class TerapistHesapYonetimi : MonoBehaviour
         }
     }
 
-    // Listeyi otomatik dolduran sihirbaz fonksiyonumuz
-    void KelimeListesiniDoldur()
+    void DosyadanKelimeleriYukle()
     {
-        // Container içinde önceden kalan kalıntılar varsa temizle (Çakışma olmasın)
+        kelimeListesi = new List<string>();
+        TextAsset dosya = Resources.Load<TextAsset>("KelimeDosyalari/kelimeler");
+
+        if (dosya != null)
+        {
+            string[] satirlar = dosya.text.Split(new string[] { "\r\n", "\r", "\n" }, System.StringSplitOptions.RemoveEmptyEntries);
+            foreach (string satir in satirlar)
+            {
+                if (!string.IsNullOrEmpty(satir.Trim()))
+                {
+                    kelimeListesi.Add(satir.Trim());
+                }
+            }
+        }
+    }
+
+
+    public void OnAramaDegisti()
+    {
+        if (aramaInput != null)
+        {
+            KelimeListesiniFiltreleVeDoldur(aramaInput.text.Trim());
+        }
+    }
+
+    void KelimeListesiniFiltreleVeDoldur(string arananKelime)
+    {
+
         foreach (Transform child in kelimeContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // Listemizdeki her bir kelime için ekranda otomatik yeni bir yazı objesi oluşturur
+        int eşleşenKelimeSayısı = 0;
+        arananKelime = arananKelime.ToLower();
+
         foreach (string kelime in kelimeListesi)
         {
-            GameObject yeniKelime = Instantiate(kelimePrefab, kelimeContainer);
 
-            // 🚨 BU SATIRI "GetComponentInChildren" OLARAK GÜNCELLEDİK:
-            TextMeshProUGUI txt = yeniKelime.GetComponentInChildren<TextMeshProUGUI>();
-
-            if (txt != null)
+            if (string.IsNullOrEmpty(arananKelime) || kelime.ToLower().Contains(arananKelime))
             {
-                txt.text = kelime;
+                eşleşenKelimeSayısı++;
+                GameObject yeniButon = Instantiate(kelimePrefab, kelimeContainer);
+
+
+                TextMeshProUGUI txt = yeniButon.GetComponentInChildren<TextMeshProUGUI>();
+                if (txt != null) txt.text = kelime;
+
+
+                Button btn = yeniButon.GetComponent<Button>();
+                if (btn != null)
+                {
+
+                    btn.onClick.AddListener(() => ButonSecildi(yeniButon));
+                }
             }
-        } // <-- Eğer kodunun sonunda eksikse bu süslü parantezi de kapatmayı unutma!
+        }
+
+
+        if (durumMesajiText != null)
+        {
+            if (eşleşenKelimeSayısı == 0)
+            {
+                durumMesajiText.text = "Kelime bulunamadı!";
+                durumMesajiText.color = Color.red;
+            }
+            else if (string.IsNullOrEmpty(arananKelime))
+            {
+                durumMesajiText.text = "Seçmek istediğiniz kelimenin üstüne tıklayın";
+                durumMesajiText.color = Color.gray;
+            }
+            else
+            {
+                durumMesajiText.text = $"Bulunan Kelime: {eşleşenKelimeSayısı}";
+                durumMesajiText.color = Color.blue;
+            }
+        }
     }
-}
+
+    void ButonSecildi(GameObject basilanButon)
+    {
+        Image butonGorseli = basilanButon.GetComponent<Image>();
+        TextMeshProUGUI butonYazisi = basilanButon.GetComponentInChildren<TextMeshProUGUI>();
+
+        if (butonGorseli != null && butonYazisi != null)
+        {
+            string kelime = butonYazisi.text;
+
+            if (butonGorseli.color == seciliRenk)
+            {
+                butonGorseli.color = normalRenk;
+                if (secilenKelimeler.Contains(kelime)) secilenKelimeler.Remove(kelime); 
+            }
+            else
+            {
+                butonGorseli.color = seciliRenk;
+                if (!secilenKelimeler.Contains(kelime)) secilenKelimeler.Add(kelime); 
+            }
+        }
+    }
+
+    public void OdevGonder()
+    {
+        if (secilenKelimeler.Count == 0)
+        {
+            if (durumMesajiText != null) durumMesajiText.text = "Lütfen önce kelime seçin!";
+            return;
+        }
+
+       
+        List<string> temizSecilenler = new List<string>();
+        foreach (string k in secilenKelimeler)
+        {
+            if (!string.IsNullOrEmpty(k.Trim()))
+            {
+                temizSecilenler.Add(k.Trim());
+            }
+        }
+
+        string odevPaketi = string.Join(",", temizSecilenler);
+
+        PlayerPrefs.SetString("AktifOdevKelimeleri", odevPaketi);
+        PlayerPrefs.Save();
+
+        if (durumMesajiText != null)
+        {
+            durumMesajiText.text = $"Ödev başarıyla gönderildi! ({temizSecilenler.Count} Kelime)";
+            durumMesajiText.color = Color.green;
+        }
+
+        Debug.Log("Terapistin Gönderdiği Ödev Paketi: " + odevPaketi);
+    }
+
+ 
+    [Header("Danışan Ses Takip Ayarı")]
+    public AudioSource terapistAudioSource; 
+
+    
+    public void DanisaninSesiniDinle()
+    {
+        if (OdevSistemVerisi.SonKaydedilenSes != null)
+        {
+            AudioSource audio = GetComponent<AudioSource>();
+            if (audio != null)
+            {
+                audio.clip = OdevSistemVerisi.SonKaydedilenSes;
+                audio.Play();
+            }
+        }
+    }
+} 
+
