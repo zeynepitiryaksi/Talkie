@@ -9,20 +9,32 @@ public class TeacherManager : MonoBehaviour
     public Transform contentPanel;     
     public GameObject wordPrefab;       
 
-    // Sistemdeki örnek kelime havuzu
+   
     private List<string> wordPool = new List<string> { "Araba", "Tren", "Kitap", "Elma", "Güneþ", "Televizyon", "Kaþýk", "Ördek", "Balýk", "Uçak" };
 
-    // Seçilen kelimelerin listesi
+   
     private List<string> selectedWords = new List<string>();
 
-    void Start()
+   
+    void OnEnable()
     {
+        
+        // Sonra o kelimeleri Content'in içine týkýr týkýr dizsin
         GenerateWordList();
     }
 
-   
-    void GenerateWordList()
+    public void GenerateWordList()
+
+
     {
+        if (contentPanel != null)
+        {
+            foreach (Transform child in contentPanel)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
         foreach (string word in wordPool)
         {
             
@@ -55,7 +67,7 @@ public class TeacherManager : MonoBehaviour
              
                 toggle.isOn = false;
 
-                // SONRA hocanýn týklamalarýný dinlemeye baþlýyoruz
+               
                 toggle.onValueChanged.AddListener((bool isChecked) => {
                     ToggleWordSelection(word, isChecked);
                 });

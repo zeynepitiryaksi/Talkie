@@ -13,8 +13,8 @@ public class DanisanYonetimi : MonoBehaviour
     public TextMeshProUGUI mevcutKelimeText;
     public TextMeshProUGUI hataMesajiText;
     public GameObject ileriButonu;
-    public GameObject dinleButonu; // Sahnede çocuğun kendi sesini dinleyeceği buton
-    public TextMeshProUGUI geriBildirimText; // Duolingo geri bildirimi için
+    public GameObject dinleButonu; 
+    public TextMeshProUGUI geriBildirimText;
 
     private string[] odevKelimeleri;
     private int aktifKelimeIndeksi = 0;
