@@ -290,7 +290,9 @@ public class TerapistHesapYonetimi : MonoBehaviour
         if (secilenlerAramaInput != null) SecilenlerListesiniGuncelle(secilenlerAramaInput.text.Trim());
     }
 
-    public void SepetAcKapat()
+    // Sadece "Eklenen Kelimeler" butonu bunu tetikleyecek
+
+    public void SepetAc()
     {
         if (sepetTransform == null) return;
         if (!sepetTransform.gameObject.activeSelf) sepetTransform.gameObject.SetActive(true);
@@ -298,11 +300,23 @@ public class TerapistHesapYonetimi : MonoBehaviour
         Animator panelAnim = sepetTransform.GetComponent<Animator>();
         if (panelAnim != null)
         {
-            sepetAcikMi = !sepetAcikMi;
-            panelAnim.SetTrigger(sepetAcikMi ? "Ac" : "Kapa");
+            // Play yerine SetBool kullanıyoruz
+            panelAnim.SetBool("IsOpen", true);
         }
     }
 
+    // Çarpı (X) butonu buna bağlanacak
+    public void SepetKapa()
+    {
+        if (sepetTransform == null) return;
+
+        Animator panelAnim = sepetTransform.GetComponent<Animator>();
+        if (panelAnim != null)
+        {
+            // Kapatırken bool değerini false yapıyoruz
+            panelAnim.SetBool("IsOpen", false);
+        }
+    }
     // --- KAYIT VE GİRİŞ FONKSİYONLARI (Aynen Korundu) ---
     public void TerapistKayitOl()
     {
@@ -398,7 +412,12 @@ public class TerapistHesapYonetimi : MonoBehaviour
         if (kayitOlAltPaneli != null) kayitOlAltPaneli.SetActive(false);
         if (girisYapAltPaneli != null) girisYapAltPaneli.SetActive(true);
     }
-
+    // --- BU FONKSİYONU KODUNA EKLE ---
+    public void HesabinYokMuButonu()
+    {
+        if (girisYapAltPaneli != null) girisYapAltPaneli.SetActive(false); // Giriş panelini kapat
+        if (kayitOlAltPaneli != null) kayitOlAltPaneli.SetActive(true);   // Kayıt panelini aç
+    }
     public void DanisaninSesiniDinle()
     {
         if (OdevSistemVerisi.SonKaydedilenSes != null)

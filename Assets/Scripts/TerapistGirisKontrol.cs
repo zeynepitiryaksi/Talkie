@@ -1,4 +1,4 @@
-using TMPro; 
+using TMPro;
 using UnityEngine;
 
 public class TerapistGirisKontrol : MonoBehaviour
@@ -18,25 +18,23 @@ public class TerapistGirisKontrol : MonoBehaviour
     public GameObject kayitTekrarGozAcikButonu;
     public GameObject kayitTekrarGozKapaliButonu;
 
-   
+    // --- ÞÝFRE GÖSTER/GÝZLE FONKSÝYONLARI ---
+
     public void GirisSifreGosterKapat()
     {
         ToggleSifre(girisSifreKutusu, girisGozAcikButonu, girisGozKapaliButonu);
     }
-
 
     public void KayitSifreGosterKapat()
     {
         ToggleSifre(kayitSifreKutusu, kayitGozAcikButonu, kayitGozKapaliButonu);
     }
 
- 
     public void KayitTekrarSifreGosterKapat()
     {
         ToggleSifre(kayitTekrarSifreKutusu, kayitTekrarGozAcikButonu, kayitTekrarGozKapaliButonu);
     }
 
-   
     private void ToggleSifre(TMP_InputField inputField, GameObject gozAcik, GameObject gozKapali)
     {
         if (inputField.contentType == TMP_InputField.ContentType.Password)
