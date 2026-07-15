@@ -20,12 +20,20 @@ public class PanelYoneticisi : MonoBehaviour
     {
         panelGecmisi = new Stack<GameObject>();
 
-        // Ýlk baþta tüm panelleri kapatýp sadece baþlangýç panelini açalým
-        TumPanelleriKapat();
-
+        // === KRÝTÝK DÜZELTME 1 ===
+        // Ýlk baþlangýç panelini aktifPanel olarak atayýp, 
+        // ardýndan diðer tüm her þeyi kapatmaya zorluyoruz.
         if (oyunBaslangicPaneli != null)
         {
             aktifPanel = oyunBaslangicPaneli;
+        }
+
+        // Listeye eklediðin ne varsa (giriþ panelleri, ana butonlar vs.) hepsini kapatýr
+        TumPanelleriKapat();
+
+        // Sadece baþlangýç panelini temiz bir þekilde açar
+        if (aktifPanel != null)
+        {
             aktifPanel.SetActive(true);
         }
 
@@ -47,11 +55,43 @@ public class PanelYoneticisi : MonoBehaviour
             panelGecmisi.Push(aktifPanel);
         }
 
-        // Ekrandaki eski panelleri temizle
+        // Yenisini aktif panel yapýp her þeyi kapatýyoruz
+        aktifPanel = acilanPanel;
         TumPanelleriKapat();
 
-        // Yenisini aktif yap ve hafýzaya al
-        aktifPanel = acilanPanel;
+        // Sadece gitmek istediðimiz paneli açýyoruz
+        aktifPanel.SetActive(true);
+
+        GeriButonunuGuncelle();
+    }
+
+    // --- BAÞARILI GÝRÝÞ YAPILDIÐINDA ÇALIÞACAK GÜVENLÝ FONKSÝYON ---
+    public void BasariliGirisGecisiYap(GameObject anaPanel)
+    {
+        if (anaPanel == null)
+        {
+            Debug.LogError("PanelYoneticisi: BasariliGirisGecisiYap için gelen anaPanel Null!");
+            return;
+        }
+
+        // Eðer bu yeni panel listemizde yoksa otomatik olarak listeye ekleyelim ki kazara kapanmasýn!
+        if (!tumPaneller.Contains(anaPanel))
+        {
+            tumPaneller.Add(anaPanel);
+        }
+
+        // Eski aktif paneli (Giriþ Panelini) geçmiþe atýyoruz
+        if (aktifPanel != null && aktifPanel != anaPanel)
+        {
+            panelGecmisi.Clear(); // Önceki sayfalarý temizle
+            panelGecmisi.Push(aktifPanel); // Sadece GÝRÝÞ PANELÝNÝ geçmiþe ekle
+        }
+
+        // Yeni paneli aktif yapýp diðer her þeyi kapatýyoruz
+        aktifPanel = anaPanel;
+        TumPanelleriKapat();
+
+        // Sadece yeni paneli aç
         aktifPanel.SetActive(true);
 
         GeriButonunuGuncelle();
@@ -62,10 +102,11 @@ public class PanelYoneticisi : MonoBehaviour
     {
         if (panelGecmisi.Count > 0)
         {
-            TumPanelleriKapat();
-
-            // Hafýzadan bir önceki paneli çek ve aç
+            // Hafýzadan bir önceki paneli çek
             aktifPanel = panelGecmisi.Pop();
+
+            // Diðerlerini kapatýp sadece geçmiþten çekileni aç
+            TumPanelleriKapat();
             if (aktifPanel != null)
             {
                 aktifPanel.SetActive(true);
@@ -79,9 +120,20 @@ public class PanelYoneticisi : MonoBehaviour
     {
         foreach (GameObject panel in tumPaneller)
         {
-            // Küçücük bir önlem: globalGeriButonu kazara listenin içindeyse onu kapatmasýn
             if (panel != null && panel != globalGeriButonu)
             {
+                // EÐER OBJENÝN ADINDA "Scroll" VEYA "Content" VEYA "Viewport" GEÇÝYORSA KAZARA KAPATMA!
+                if (panel.name.Contains("Scroll") || panel.name.Contains("Content") || panel.name.Contains("Viewport"))
+                {
+                    continue;
+                }
+
+                // Eðer kapatýlmaya çalýþýlan panel o an açmak istediðimiz aktif panel ise kapatmýyoruz!
+                if (aktifPanel != null && panel == aktifPanel)
+                {
+                    continue;
+                }
+
                 panel.SetActive(false);
             }
         }
@@ -91,7 +143,6 @@ public class PanelYoneticisi : MonoBehaviour
     {
         if (globalGeriButonu != null)
         {
-            // Geri butonu geçmiþte panel varsa aktif olsun
             globalGeriButonu.SetActive(panelGecmisi.Count > 0);
         }
     }

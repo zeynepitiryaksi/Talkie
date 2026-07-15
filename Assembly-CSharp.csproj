@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DanışanYonetimi.cs" />
     <Compile Include="Assets\Scripts\StudentManager.cs" />
     <Compile Include="Assets\Scripts\WordItemScript.cs" />
+    <Compile Include="Assets\Scripts\FirebaseManager.cs" />
     <Compile Include="Assets\Cartoon UI\Script\MainControls.cs" />
     <Compile Include="Assets\Cartoon UI\Script\StoreScript.cs" />
     <Compile Include="Assets\Scripts\ÖdevVerisiSistemi.cs" />
@@ -653,6 +654,10 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.3.2f1\Editor\Data\Managed\UnityEngine\UnityEditor.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@aea9d3bd5e19\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
@@ -715,10 +720,6 @@
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
       <HintPath>Library\PackageCache\com.unity.analytics@c9d14a6bdec6\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Firebase.Analytics">
-      <HintPath>Assets\Firebase\Plugins\Firebase.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Android.Types">

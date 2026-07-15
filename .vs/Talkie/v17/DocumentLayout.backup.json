@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\Zeynep\\Desktop\\Talkie\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\dan\u0131\u015Fanyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dan\u0131\u015Fanyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\panelyoneticisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelyoneticisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\terapisthesapyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|c:\\users\\zeynep\\desktop\\talkie\\assets\\scripts\\terapisthesapyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\terapisthesapyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\terapistgiriskontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\terapistgiriskontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\\u00F6devverisisistemi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\\u00F6devverisisistemi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\terapistgiriskontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\terapistgiriskontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\panelyoneticisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelyoneticisi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\dan\u0131\u015Fanyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\dan\u0131\u015Fanyonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\firebasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\firebasemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\LoginManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\LoginManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\studentmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\SifreYonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\SifreYonetimi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\teachermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{367C9212-F5E9-BAAA-A8D1-29F47767764E}|Assembly-CSharp.csproj|C:\\Users\\Zeynep\\Desktop\\Talkie\\assets\\scripts\\worditemscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,49 +70,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
+              "Title": "FirebaseManager.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\FirebaseManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FirebaseManager.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\FirebaseManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FirebaseManager.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAwwJ0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T12:46:57.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PanelYoneticisi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\PanelYoneticisi.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PanelYoneticisi.cs",
               "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\PanelYoneticisi.cs",
               "RelativeToolTip": "Assets\\Scripts\\PanelYoneticisi.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAqwGEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-10T16:23:49.047Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "TeacherManager.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TeacherManager.cs",
               "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TeacherManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\TeacherManager.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAYwGkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-29T20:18:08.715Z"
+              "WhenOpened": "2026-06-29T20:18:08.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TerapistHesapYonetimi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TerapistHesapYonetimi.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TerapistHesapYonetimi.cs",
               "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TerapistHesapYonetimi.cs",
               "RelativeToolTip": "Assets\\Scripts\\TerapistHesapYonetimi.cs",
-              "ViewState": "AgIAACIBAAAAAAAAAAAwwD4BAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALMAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-01T19:35:58.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "\u00D6devVerisiSistemi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\\u00D6devVerisiSistemi.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\\u00D6devVerisiSistemi.cs",
@@ -117,13 +139,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "TerapistGirisKontrol.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TerapistGirisKontrol.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TerapistGirisKontrol.cs",
               "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TerapistGirisKontrol.cs",
               "RelativeToolTip": "Assets\\Scripts\\TerapistGirisKontrol.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAzwDUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-07-03T19:24:17.204Z",
               "EditorCaption": ""
@@ -131,6 +153,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "Dan\u0131\u015FanYonetimi.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAowMkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-02T15:00:38.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "LoginManager.cs",
+              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\LoginManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoginManager.cs",
+              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\LoginManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoginManager.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-10T19:23:12.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "StudentManager.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\StudentManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\StudentManager.cs",
@@ -138,25 +184,11 @@
               "RelativeToolTip": "Assets\\Scripts\\StudentManager.cs",
               "ViewState": "AgIAABcAAAAAAAAAAAAAwCEAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-30T10:30:21.92Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-30T10:30:21.92Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Dan\u0131\u015FanYonetimi.cs",
-              "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
-              "ToolTip": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Dan\u0131\u015FanYonetimi.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAjwC8AAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-07-02T15:00:38.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "SifreYonetimi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\SifreYonetimi.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SifreYonetimi.cs",
@@ -167,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "WordItemScript.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\WordItemScript.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WordItemScript.cs",
@@ -179,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "kelimeler.txt",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Resources\\KelimeDosyalari\\kelimeler.txt",
               "RelativeDocumentMoniker": "Assets\\Resources\\KelimeDosyalari\\kelimeler.txt",
@@ -191,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "TerapistHesapY\u00F6netimi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Scripts\\TerapistHesapY\u00F6netimi.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\TerapistHesapY\u00F6netimi.cs",
@@ -203,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "TerapistHesapY\u00F6netimi.cs",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\Cartoon UI\\Script\\TerapistHesapY\u00F6netimi.cs",
               "RelativeDocumentMoniker": "Assets\\Cartoon UI\\Script\\TerapistHesapY\u00F6netimi.cs",
@@ -215,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "LiberationSans - OFL.txt",
               "DocumentMoniker": "C:\\Users\\Zeynep\\Desktop\\Talkie\\Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",
               "RelativeDocumentMoniker": "Assets\\TextMesh Pro\\Fonts\\LiberationSans - OFL.txt",

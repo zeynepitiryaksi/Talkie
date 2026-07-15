@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "822882709906",
+    "firebase_url": "https://talkie-c8bce-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "talkie-c8bce",
     "storage_bucket": "talkie-c8bce.firebasestorage.app"
   },

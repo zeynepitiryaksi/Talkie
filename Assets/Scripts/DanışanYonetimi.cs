@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections.Generic;
+using Firebase.Database; // Firebase kütüphanesini ekledik
 
 public class DanisanYonetimi : MonoBehaviour
 {
@@ -13,12 +14,14 @@ public class DanisanYonetimi : MonoBehaviour
     public TextMeshProUGUI mevcutKelimeText;
     public TextMeshProUGUI hataMesajiText;
     public GameObject ileriButonu;
-    public GameObject dinleButonu; 
+    public GameObject dinleButonu;
     public TextMeshProUGUI geriBildirimText;
 
     private string[] odevKelimeleri;
     private int aktifKelimeIndeksi = 0;
-    private string gecerliKod = "1234";
+
+    // Firebase Referansı
+    private DatabaseReference dbReference;
 
     [Header("Ses Kayıt Ayarları")]
     private AudioSource audioSource;
@@ -28,6 +31,9 @@ public class DanisanYonetimi : MonoBehaviour
 
     void Start()
     {
+        // Firebase veritabanı referansını başlatıyoruz
+        dbReference = FirebaseDatabase.DefaultInstance.RootReference;
+
         audioSource = GetComponent<AudioSource>();
 
         if (Microphone.devices.Length > 0)
@@ -43,42 +49,60 @@ public class DanisanYonetimi : MonoBehaviour
         if (geriBildirimText != null) geriBildirimText.text = "";
     }
 
-    public void DanisanGirisYap()
+    // Bu panel her açıldığında (Danışan başarıyla giriş yaptığında) Firebase'den kelimeleri çeker
+    private void OnEnable()
     {
-        string girilenKod = danisanKodInput.text.Trim();
+        // Giriş yapan öğrencinin kodunu hafızadan alıyoruz
+        string girisYapanKod = PlayerPrefs.GetString("GirisYapanOgrenciKodu", "");
 
-        if (girilenKod == gecerliKod)
+        if (!string.IsNullOrEmpty(girisYapanKod))
         {
-            if (PlayerPrefs.HasKey("AktifOdevKelimeleri"))
-            {
-                string odevPaketi = PlayerPrefs.GetString("AktifOdevKelimeleri");
-                string[] geciciDizi = odevPaketi.Split(',');
-                List<string> temizKelimeler = new List<string>();
+            if (mevcutKelimeText != null) mevcutKelimeText.text = "Ödev yükleniyor...";
+            StartCoroutine(FirebaseOdevKelimeleriniCekCoroutine(girisYapanKod));
+        }
+    }
 
-                foreach (string k in geciciDizi)
+    // === CANLI FİREBASE ÖDEV ÇEKME SİSTEMİ ===
+    private System.Collections.IEnumerator FirebaseOdevKelimeleriniCekCoroutine(string kod)
+    {
+        if (dbReference == null) dbReference = FirebaseDatabase.DefaultInstance.RootReference;
+
+        var sorguTask = dbReference.Child("codes").Child(kod).Child("kelimeler").GetValueAsync();
+
+        yield return new WaitUntil(() => sorguTask.IsCompleted);
+
+        if (sorguTask.IsFaulted || sorguTask.IsCanceled)
+        {
+            Debug.LogError("[Talkie] Firebase ödev kelimeleri çekme hatası.");
+            if (mevcutKelimeText != null) mevcutKelimeText.text = "Bağlantı Hatası!";
+            yield break;
+        }
+
+        DataSnapshot snapshot = sorguTask.Result;
+
+        if (snapshot != null && snapshot.Exists)
+        {
+            List<string> cekilenKelimeler = new List<string>();
+
+            // Firebase'den gelen kelimeleri listeye dolduruyoruz
+            foreach (DataSnapshot cocuk in snapshot.Children)
+            {
+                if (cocuk.Value != null)
                 {
-                    if (!string.IsNullOrEmpty(k.Trim()))
-                    {
-                        temizKelimeler.Add(k.Trim());
-                    }
+                    cekilenKelimeler.Add(cocuk.Value.ToString().Trim());
                 }
-
-                odevKelimeleri = temizKelimeler.ToArray();
-                aktifKelimeIndeksi = 0;
-
-                if (danisanGirisPaneli != null) danisanGirisPaneli.SetActive(false);
-                if (danisanOyunPaneli != null) danisanOyunPaneli.SetActive(true);
-
-                KelimeyiEkranaBas();
             }
-            else
-            {
-                HataGoster("Şu an öğretmeninizden gelen bir ödev yok!");
-            }
+
+            odevKelimeleri = cekilenKelimeler.ToArray();
+            aktifKelimeIndeksi = 0;
+
+            Debug.Log($"[Talkie] {odevKelimeleri.Length} adet ödev kelimesi başarıyla çekildi!");
+            KelimeyiEkranaBas();
         }
         else
         {
-            HataGoster("Hatalı kod girdiniz!");
+            Debug.LogWarning("[Talkie] Bu öğrenci kodu için atanmış kelime bulunamadı.");
+            if (mevcutKelimeText != null) mevcutKelimeText.text = "Atanmış ödev bulunamadı!";
         }
     }
 
@@ -88,10 +112,16 @@ public class DanisanYonetimi : MonoBehaviour
         if (geriBildirimText != null) geriBildirimText.text = "";
         kaydedilenSes = null;
 
-        if (odevKelimeleri != null && aktifKelimeIndeksi < odevKelimeleri.Length)
+        if (odevKelimeleri != null && odevKelimeleri.Length > 0 && aktifKelimeIndeksi < odevKelimeleri.Length)
         {
             string suAnkiKelime = odevKelimeleri[aktifKelimeIndeksi];
-            mevcutKelimeText.text = suAnkiKelime;
+
+            // === KELİME TEXT GÜNCELLEMESİ ===
+            if (mevcutKelimeText != null)
+            {
+                mevcutKelimeText.text = suAnkiKelime; // TextMeshPro güncelleniyor!
+            }
+
             if (ileriButonu != null) ileriButonu.SetActive(true);
 
             // Resources klasöründen öğretmen sesini otomatik oynatır
@@ -103,7 +133,10 @@ public class DanisanYonetimi : MonoBehaviour
         }
         else
         {
-            mevcutKelimeText.text = "Tebrikler! Ödevini Tamamladın. 🎉";
+            if (mevcutKelimeText != null)
+            {
+                mevcutKelimeText.text = "Tebrikler! Ödevini Tamamladın. 🎉";
+            }
             if (ileriButonu != null) ileriButonu.SetActive(false);
         }
     }
@@ -125,8 +158,7 @@ public class DanisanYonetimi : MonoBehaviour
         {
             kaydedilenSes = Microphone.Start(mikrofonAdi, false, 5, 44100);
             kayitYapiliyor = true;
-            mevcutKelimeText.color = Color.red;
-            //if (dinleButonu != null) dinleButonu.SetActive(false);
+            if (mevcutKelimeText != null) mevcutKelimeText.color = Color.red;
             if (geriBildirimText != null) geriBildirimText.text = "";
             Debug.Log("Kayıt Başladı...");
         }
@@ -134,7 +166,7 @@ public class DanisanYonetimi : MonoBehaviour
         {
             Microphone.End(mikrofonAdi);
             kayitYapiliyor = false;
-            mevcutKelimeText.color = Color.black;
+            if (mevcutKelimeText != null) mevcutKelimeText.color = Color.black;
             if (dinleButonu != null) dinleButonu.SetActive(true);
             Debug.Log("Kayıt Bitti.");
 
